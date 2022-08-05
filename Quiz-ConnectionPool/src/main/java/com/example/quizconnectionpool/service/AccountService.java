@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface AccountService {
     Account validateLogin(String username, String password);
-    Account register(String name, String email, String username, String password);
+    int register(String email, String username, String password);
     List<Account> getAllUsers();
-    Account findUserByUsername(String username);
-    Account suspendUser(Integer id);
-    Account activateUser(Integer id);
+    List<Account> findUserByUsername(String username);
+    int suspendUser(Integer id);
+    int activateUser(Integer id);
 }

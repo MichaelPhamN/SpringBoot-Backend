@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class Feedback {
     private Integer feedbackId;
-    private Integer feedbackAcctId;
+    private Account account;
     private Integer feedbackStars;
     private String feedbackComment;
     private Timestamp feedbackTimestamp;

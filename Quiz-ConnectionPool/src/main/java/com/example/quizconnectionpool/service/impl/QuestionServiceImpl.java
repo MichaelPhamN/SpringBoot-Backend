@@ -9,12 +9,12 @@ import java.util.List;
 @Service
 public class QuestionServiceImpl implements QuestionService {
     @Override
-    public Integer createQuestion(String category, String description, String choiceA, String choiceB, String choiceC, String choiceD, String answer) {
+    public Integer createQuestion(Question question) {
         return null;
     }
 
     @Override
-    public Question editQuestion(Integer id, String category, String description, String choiceA, String choiceB, String choiceC, String choiceD, String answer) {
+    public Question updateQuestion(Question question) {
         return null;
     }
 
@@ -25,11 +25,6 @@ public class QuestionServiceImpl implements QuestionService {
 
     @Override
     public List<Question> getQuestionsByCategory(String category) {
-        return null;
-    }
-
-    @Override
-    public List<Question> findQuestions(Integer quizId) {
         return null;
     }
 

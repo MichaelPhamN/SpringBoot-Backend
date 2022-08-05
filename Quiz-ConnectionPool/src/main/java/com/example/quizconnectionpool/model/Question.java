@@ -11,7 +11,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class Question implements Serializable {
     private Integer questionId;
-    private Integer questionCategoryId;
+    private Category category;
     private String questionDescription;
     private String questionChoiceA;
     private String questionChoiceB;

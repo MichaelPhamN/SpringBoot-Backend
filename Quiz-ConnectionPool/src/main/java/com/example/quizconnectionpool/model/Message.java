@@ -12,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 public class Message implements Serializable {
     private Integer messageId;
-    private Integer messageAccountId;
+    private Account account;
     private String title;
     private String content;
     private Date sent;

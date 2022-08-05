@@ -6,8 +6,8 @@ import com.example.quizconnectionpool.model.Account;
 import java.util.List;
 
 public interface MessageDao {
-    Integer createMessage(Account account, String title, String content);
+    int createMessage(Message message);
     List<Message> getAllMessages();
-    Message findMessageById(Integer id);
-    Message updateMessage(Integer id, Boolean unread);
+    Message findMessageById(int id);
+    int updateMessage(int id);
 }

@@ -41,7 +41,7 @@ public class CategoryDaoImpl implements CategoryDao {
     }
 
     @Override
-    public Category findCategoryById(Integer id) {
+    public Category findCategoryById(int id) {
         Category category = null;
         try {
             String sql = "SELECT cat_id, category_name FROM category WHERE category.cat_id = ?";
@@ -62,7 +62,7 @@ public class CategoryDaoImpl implements CategoryDao {
     }
 
     @Override
-    public int addCategory(Category category) {
+    public int createCategory(Category category) {
         int executedRow = 0;
         try {
             String sql = "INSERT INTO category(category_name) VALUES (?)";
@@ -77,7 +77,7 @@ public class CategoryDaoImpl implements CategoryDao {
     }
 
     @Override
-    public int editCategory(Category category) {
+    public int updateCategory(Category category) {
         int executedRow = 0;
         try {
             String sql = "UPDATE category SET category.category_name = ? WHERE category.cat_id = ?";
@@ -93,7 +93,7 @@ public class CategoryDaoImpl implements CategoryDao {
     }
 
     @Override
-    public int deleteCategory(Integer id) {
+    public int deleteCategory(int id) {
         int executedRow = 0;
         try {
             String sql = "DELETE FROM category WHERE category.cat_id = ?";

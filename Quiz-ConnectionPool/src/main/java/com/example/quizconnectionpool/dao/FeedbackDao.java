@@ -5,10 +5,10 @@ import com.example.quizconnectionpool.model.Feedback;
 import java.util.List;
 
 public interface FeedbackDao {
-    Integer createFeedback(Integer userId, Integer rate, String comment);
-    Integer updateFeedback(Integer userId, Integer rate, String comment);
-    Feedback findFeedbackByUserId(Integer userId);
+    int createFeedback(Feedback feedback);
+    int updateFeedback(Feedback feedback);
+    Feedback findFeedbackByAccountId(int account_id);
     List<Feedback> getAllFeedbacks();
-    Double getAvgRate();
-    Integer countRate(Integer rate);
+    double getAvgRate();
+    int countRate(int rate);
 }

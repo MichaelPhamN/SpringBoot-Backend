@@ -7,15 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Quiz-Hibernate" />
         <module name="Quiz-ConnectionPool" />
         <module name="Quiz-StoredProcedure" />
-        <module name="SpringBoot-Hibernate" />
         <module name="SpringBoot-Backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Quiz-Hibernate" target="1.8" />
       <module name="Quiz-JDBCBuilder" target="1.8" />
+      <module name="SpringBoot-Hibernate" target="1.8" />
+      <module name="SpringBoot-JDBCBuilder" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -25,6 +26,7 @@
       <module name="Quiz-JDBCBuilder" options="-parameters" />
       <module name="Quiz-StoredProcedure" options="-parameters" />
       <module name="SpringBoot-Hibernate" options="-parameters" />
+      <module name="SpringBoot-JDBCBuilder" options="-parameters" />
     </option>
   </component>
 </project>

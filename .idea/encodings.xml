@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/Quiz-Hibernate/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Quiz-Hibernate/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Quiz-JDBCBuilder/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Quiz-JDBCBuilder/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Quiz-StoredProcedure/src/main/java" charset="UTF-8" />
   </component>
 </project>

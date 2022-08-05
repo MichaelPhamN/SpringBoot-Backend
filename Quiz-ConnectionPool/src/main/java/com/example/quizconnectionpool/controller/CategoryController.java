@@ -33,14 +33,14 @@ public class CategoryController {
     }
 
     @PostMapping("")
-    public int addCategory(@RequestBody Category category) {
-        int executedRow = categoryService.addCategory(category);
+    public int createCategory(@RequestBody Category category) {
+        int executedRow = categoryService.createCategory(category);
         return executedRow;
     }
 
     @PutMapping("")
-    public int editCategory(@RequestBody Category category) {
-        int executedRow = categoryService.editCategory(category);
+    public int updateCategory(@RequestBody Category category) {
+        int executedRow = categoryService.updateCategory(category);
         return executedRow;
     }
 }
