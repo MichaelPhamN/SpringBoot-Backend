@@ -39,7 +39,7 @@ public class QuizDaoImpl implements QuizDao {
     }
 
     @Override
-    public List<Quiz> findQuiz(int acct_id, int cat_id) {
+    public List<Quiz> findQuizzes(int acct_id, int cat_id) {
         List<Quiz> quizzes = null;
         try {
             String sql = "SELECT quiz.quiz_id as q_id, quiz.quiz_name as q_name, quiz.starttime as q_starttime, " +
@@ -83,7 +83,7 @@ public class QuizDaoImpl implements QuizDao {
     }
 
     @Override
-    public List<Quiz> findQuiz(int acct_id) {
+    public List<Quiz> findQuizzes(int acct_id) {
         List<Quiz> quizzes = null;
         try {
             String sql = "SELECT quiz.quiz_id as q_id, quiz.quiz_name as q_name, quiz.starttime as q_starttime, " +
@@ -242,7 +242,7 @@ public class QuizDaoImpl implements QuizDao {
     }
 
     @Override
-    public int countQuiz(int acct_id, String cat_name) {
+    public int countQuizzes(int acct_id, int cat_id) {
         int count = 0;
         try {
             String sql = "SELECT COUNT(*) " +
@@ -251,10 +251,10 @@ public class QuizDaoImpl implements QuizDao {
                             "   ON quiz.cat_id = category.cat_id " +
                             "JOIN account " +
                             "   ON quiz.cat_id = account.cat_id " +
-                            "WHERE account.acct_id = ? AND category.category_name LIKE %?%";
+                            "WHERE account.acct_id = ? AND account.cat_id = ?";
             PreparedStatement preparedStatement = config.getConnection().prepareStatement(sql);
             preparedStatement.setInt(1, acct_id);
-            preparedStatement.setString(2, cat_name);
+            preparedStatement.setInt(2, cat_id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 count = resultSet.getInt(1);

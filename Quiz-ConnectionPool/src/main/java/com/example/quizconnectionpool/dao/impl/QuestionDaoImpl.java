@@ -130,7 +130,7 @@ public class QuestionDaoImpl implements QuestionDao {
     }
 
     @Override
-    public Question findQuestion(int id) {
+    public Question findQuestionById(int id) {
         Question question = null;
         try {
             String sql = "SELECT question.question_id as q_id, question.cat_id as q_catId, question.description as q_description, " +

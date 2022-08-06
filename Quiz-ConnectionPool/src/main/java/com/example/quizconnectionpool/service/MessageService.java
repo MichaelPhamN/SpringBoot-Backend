@@ -6,8 +6,8 @@ import com.example.quizconnectionpool.model.Message;
 import java.util.List;
 
 public interface MessageService {
-    Integer createMessage(Account account, String title, String content);
+    int createMessage(Message message);
     List<Message> getAllMessages();
     Message findMessageById(Integer id);
-    Message updateMessage(Integer id, Boolean unread);
+    int updateMessage(int id);
 }

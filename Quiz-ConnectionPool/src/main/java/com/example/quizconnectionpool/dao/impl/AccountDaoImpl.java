@@ -22,7 +22,7 @@ public class AccountDaoImpl implements AccountDao {
     private DBConfig config;
     private static final Logger logger = LogManager.getLogger(AccountDaoImpl.class);
     @Override
-    public Account validateLogin(String username, String password) {
+    public Account login(String username, String password) {
         Account account = null;
         try {
             String sql = "SELECT acct_id, username, password, email, phone, birthday, firstname, " +
@@ -104,7 +104,7 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public List<Account> getAllUsers() {
+    public List<Account> getAllAccounts() {
         List<Account> accounts = null;
         try {
             accounts = new ArrayList<>();
@@ -134,7 +134,7 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public List<Account> findUserByUsername(String username) {
+    public List<Account> findAccountByUsername(String username) {
         List<Account> accounts = null;
         try {
             accounts = new ArrayList<>();
@@ -166,7 +166,7 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public int suspendUser(int id) {
+    public int suspendAccount(int id) {
         int executedRow = 0;
         try {
             String sql = "UPDATE account SET account.status = !account.status WHERE account.acct_id = ?";
@@ -181,7 +181,7 @@ public class AccountDaoImpl implements AccountDao {
     }
 
     @Override
-    public int activateUser(int id) {
+    public int activateAccount(int id) {
         int executedRow = 0;
         try {
             String sql = "UPDATE account SET account.isAdmin = !account.isAdmin WHERE account.acct_id = ?";

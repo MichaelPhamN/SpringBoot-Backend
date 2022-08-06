@@ -1,5 +1,6 @@
 package com.example.quizconnectionpool.service.impl;
 
+import com.example.quizconnectionpool.dao.impl.FeedbackDaoImpl;
 import com.example.quizconnectionpool.model.Feedback;
 import com.example.quizconnectionpool.service.FeedbackService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,34 +11,34 @@ import java.util.List;
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
     @Autowired
-    private FeedbackService feedbackService;
+    private FeedbackDaoImpl feedbackDao;
     @Override
-    public int createFeedback(Integer a_id, Integer stars, String comment) {
-        return feedbackService.createFeedback(a_id, stars, comment);
+    public int createFeedback(Feedback feedback) {
+        return feedbackDao.createFeedback(feedback);
     }
 
     @Override
-    public int updateFeedback(Integer a_id, Integer stars, String comment) {
-        return feedbackService.updateFeedback(a_id, stars, comment);
+    public int updateFeedback(Feedback feedback) {
+        return feedbackDao.updateFeedback(feedback);
     }
 
     @Override
-    public Feedback findFeedbackByUserId(Integer a_id) {
-        return feedbackService.findFeedbackByUserId(a_id);
+    public Feedback findFeedbackByAccountId(int account_id) {
+        return feedbackDao.findFeedbackByAccountId(account_id);
     }
 
     @Override
     public List<Feedback> getAllFeedbacks() {
-        return feedbackService.getAllFeedbacks();
+        return feedbackDao.getAllFeedbacks();
     }
 
     @Override
     public double getAvgRate() {
-        return feedbackService.getAvgRate();
+        return feedbackDao.getAvgRate();
     }
 
     @Override
-    public int countRate(Integer rate) {
-        return feedbackService.countRate(rate);
+    public int countRate(int rate) {
+        return feedbackDao.countRate(rate);
     }
 }

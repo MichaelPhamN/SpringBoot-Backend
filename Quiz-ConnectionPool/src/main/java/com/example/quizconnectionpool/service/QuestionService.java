@@ -5,9 +5,9 @@ import com.example.quizconnectionpool.model.Question;
 import java.util.List;
 
 public interface QuestionService {
-    Integer createQuestion(Question question);
-    Question updateQuestion(Question question);
+    int createQuestion(Question question);
+    int updateQuestion(Question question);
     List<Question> getAllQuestions();
-    List<Question> getQuestionsByCategory(String category);
-    Question findQuestion(Integer id);
+    List<Question> getQuestionsByCategory(String catName);
+    Question findQuestionById(int id);
 }

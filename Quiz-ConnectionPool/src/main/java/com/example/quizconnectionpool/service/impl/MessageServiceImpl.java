@@ -1,31 +1,35 @@
 package com.example.quizconnectionpool.service.impl;
 
+import com.example.quizconnectionpool.dao.impl.MessageDaoImpl;
 import com.example.quizconnectionpool.model.Account;
 import com.example.quizconnectionpool.model.Message;
 import com.example.quizconnectionpool.service.MessageService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class MessageServiceImpl implements MessageService {
+    @Autowired
+    private MessageDaoImpl messageDao;
     @Override
-    public Integer createMessage(Account account, String title, String content) {
-        return null;
+    public int createMessage(Message message) {
+        return messageDao.createMessage(message);
     }
 
     @Override
     public List<Message> getAllMessages() {
-        return null;
+        return messageDao.getAllMessages();
     }
 
     @Override
     public Message findMessageById(Integer id) {
-        return null;
+        return messageDao.findMessageById(id);
     }
 
     @Override
-    public Message updateMessage(Integer id, Boolean unread) {
-        return null;
+    public int updateMessage(int id) {
+        return messageDao.updateMessage(id);
     }
 }

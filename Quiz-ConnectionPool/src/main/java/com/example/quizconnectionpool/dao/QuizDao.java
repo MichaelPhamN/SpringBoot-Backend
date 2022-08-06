@@ -8,12 +8,12 @@ import java.util.Date;
 import java.util.List;
 
 public interface QuizDao {
-    List<Quiz> findQuiz(int acct_id, int cat_id);
-    List<Quiz> findQuiz(int userId);
+    List<Quiz> findQuizzes(int acct_id, int cat_id);
+    List<Quiz> findQuizzes(int acct_id);
     Quiz findQuizById(int id);
     List<Quiz> getAllQuizzes();
     int createQuiz(Quiz quiz);
     int updateQuiz(int quizId, String quizName, int catId);
     int updateQuiz(int quizId, double score);
-    int countQuiz(int userId, String category);
+    int countQuizzes(int accountId, int catId);
 }

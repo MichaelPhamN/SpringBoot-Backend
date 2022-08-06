@@ -7,15 +7,12 @@ import java.util.Date;
 import java.util.List;
 
 public interface QuizService {
-    Integer createQuiz(Integer userId, String name, String category, Date startTime);
-    Quiz findLastQuiz(Integer userId, String category);
-    List<Quiz> findQuiz(Account user, String category);
-    List<Quiz> findQuiz(Integer userId);
-    Quiz findQuizById(Integer id);
+    List<Quiz> findQuizzes(int acct_id, int cat_id);
+    List<Quiz> findQuizzes(int acct_id);
+    Quiz findQuizById(int id);
     List<Quiz> getAllQuizzes();
-    Integer createQuizQuestion(Integer quizId, Integer choiceQuestionId);
-    Integer updateQuizQuestion(Integer quizId, Integer choiceQuestionId, String answer);
-    Integer updateQuiz(Integer quizId, Date finishTime);
-    Integer updateQuiz(Integer quizId, Integer score);
-    Integer countQuiz(Integer userId, String category);
+    int createQuiz(Quiz quiz);
+    int updateQuiz(int quizId, String quizName, int catId);
+    int updateQuiz(int quizId, double score);
+    int countQuizzes(int acct_id, int cat_id);
 }

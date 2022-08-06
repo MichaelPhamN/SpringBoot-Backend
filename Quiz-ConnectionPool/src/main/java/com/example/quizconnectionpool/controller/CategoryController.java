@@ -32,13 +32,13 @@ public class CategoryController {
         return categoryService.deleteCategory(id);
     }
 
-    @PostMapping("")
+    @PostMapping("/create")
     public int createCategory(@RequestBody Category category) {
         int executedRow = categoryService.createCategory(category);
         return executedRow;
     }
 
-    @PutMapping("")
+    @PutMapping("/update")
     public int updateCategory(@RequestBody Category category) {
         int executedRow = categoryService.updateCategory(category);
         return executedRow;

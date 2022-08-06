@@ -1,5 +1,6 @@
 package com.example.quizconnectionpool.service.impl;
 
+import com.example.quizconnectionpool.dao.impl.AccountDaoImpl;
 import com.example.quizconnectionpool.model.Account;
 import com.example.quizconnectionpool.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,29 +11,29 @@ import java.util.List;
 @Service
 public class AccountServiceImpl implements AccountService {
     @Autowired
-    AccountService accountService;
+    AccountDaoImpl accountDao;
     @Override
-    public Account validateLogin(String username, String password) {
-        return accountService.validateLogin(username,password);
+    public Account login(String username, String password) {
+        return accountDao.login(username,password);
     }
     @Override
     public int register(String email, String username, String password) {
-        return accountService.register(email, email, password);
+        return accountDao.register(email, email, password);
     }
     @Override
-    public List<Account> getAllUsers() {
-        return accountService.getAllUsers();
+    public List<Account> getAllAccounts() {
+        return accountDao.getAllAccounts();
     }
     @Override
-    public List<Account> findUserByUsername(String username) {
-        return accountService.findUserByUsername(username);
+    public List<Account> findAccountByUsername(String username) {
+        return accountDao.findAccountByUsername(username);
     }
     @Override
-    public int suspendUser(Integer id) {
-        return accountService.suspendUser(id);
+    public int suspendAccount(Integer id) {
+        return accountDao.suspendAccount(id);
     }
     @Override
-    public int activateUser(Integer id) {
-        return accountService.activateUser(id);
+    public int activateAccount(Integer id) {
+        return accountDao.activateAccount(id);
     }
 }

@@ -1,67 +1,55 @@
 package com.example.quizconnectionpool.service.impl;
 
-import com.example.quizconnectionpool.model.Account;
+import com.example.quizconnectionpool.dao.impl.QuizDaoImpl;
 import com.example.quizconnectionpool.model.Quiz;
 import com.example.quizconnectionpool.service.QuizService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 
 @Service
 public class QuizServiceImpl implements QuizService {
+    @Autowired
+    private QuizDaoImpl quizDao;
+
     @Override
-    public Integer createQuiz(Integer userId, String name, String category, Date startTime) {
-        return null;
+    public List<Quiz> findQuizzes(int acct_id, int cat_id) {
+        return quizDao.findQuizzes(acct_id, cat_id);
     }
 
     @Override
-    public Quiz findLastQuiz(Integer userId, String category) {
-        return null;
+    public List<Quiz> findQuizzes(int acct_id) {
+        return quizDao.findQuizzes(acct_id);
     }
 
     @Override
-    public List<Quiz> findQuiz(Account user, String category) {
-        return null;
-    }
-
-    @Override
-    public List<Quiz> findQuiz(Integer userId) {
-        return null;
-    }
-
-    @Override
-    public Quiz findQuizById(Integer id) {
-        return null;
+    public Quiz findQuizById(int id) {
+        return quizDao.findQuizById(id);
     }
 
     @Override
     public List<Quiz> getAllQuizzes() {
-        return null;
+        return quizDao.getAllQuizzes();
     }
 
     @Override
-    public Integer createQuizQuestion(Integer quizId, Integer choiceQuestionId) {
-        return null;
+    public int createQuiz(Quiz quiz) {
+        return quizDao.createQuiz(quiz);
     }
 
     @Override
-    public Integer updateQuizQuestion(Integer quizId, Integer choiceQuestionId, String answer) {
-        return null;
+    public int updateQuiz(int quizId, String quizName, int catId) {
+        return quizDao.updateQuiz(quizId, quizName, catId);
     }
 
     @Override
-    public Integer updateQuiz(Integer quizId, Date finishTime) {
-        return null;
+    public int updateQuiz(int quizId, double score) {
+        return quizDao.updateQuiz(quizId, score);
     }
 
     @Override
-    public Integer updateQuiz(Integer quizId, Integer score) {
-        return null;
-    }
-
-    @Override
-    public Integer countQuiz(Integer userId, String category) {
-        return null;
+    public int countQuizzes(int accountId, int catId) {
+        return quizDao.countQuizzes(accountId, catId);
     }
 }

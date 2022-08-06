@@ -9,5 +9,5 @@ public interface QuestionDao {
     int updateQuestion(Question question);
     List<Question> getAllQuestions();
     List<Question> getQuestionsByCategory(String catName);
-    Question findQuestion(int id);
+    Question findQuestionById(int id);
 }
